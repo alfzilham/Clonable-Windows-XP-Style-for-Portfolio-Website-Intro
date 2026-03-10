@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloneable Windows XP</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ─── BOOT SCREEN ──────────────────────────────────────── -->
+    <div id="loading-overlay">
+        <div class="boot-logo">
+            <svg class="boot-windows-flag" viewBox="0 0 88 88" fill="none">
+                <path d="M0 12.4L36 7.2V43H0V12.4Z" fill="#F25022" />
+                <path d="M40 6.6L88 0V43H40V6.6Z" fill="#7FBA00" />
+                <path d="M0 47H36V83.8L0 78.6V47Z" fill="#00A4EF" />
+                <path d="M40 47H88V88L40 81.4V47Z" fill="#FFB900" />
+            </svg>
+            <div class="boot-title">Windows <span>XP</span></div>
+        </div>
+        <div class="boot-bar-wrap">
+            <div class="boot-bar-inner"></div>
+        </div>
+    </div>
+
+    <!-- ─── DESKTOP ───────────────────────────────────────────── -->
+    <div id="desktop">
+
+        <!-- Icons -->
+        <div class="icon-grid">
+
+            <!-- MY COMPUTER (double-click to open explorer) -->
+            <div class="icon" id="icon-mycomputer" data-action="explorer" tabindex="0" role="button"
+                aria-label="My Computer – double-click to open">
+                <svg class="icon-img" viewBox="0 0 48 48" fill="none">
+                    <!-- Monitor body -->
+                    <rect x="4" y="6" width="40" height="28" rx="3" fill="#c8d8f0" stroke="#6080b8"
+                        stroke-width="1.5" />
+                    <rect x="6" y="8" width="36" height="24" rx="2" fill="#1a2a60" />
+                    <!-- Screen glow -->
+                    <rect x="7" y="9" width="34" height="22" rx="1.5" fill="url(#screenGrad)" />
+                    <!-- XP logo on screen -->
+                    <rect x="17" y="14" width="6" height="6" rx="0.8" fill="#F25022" opacity="0.9" />
+                    <rect x="25" y="14" width="6" height="6" rx="0.8" fill="#7FBA00" opacity="0.9" />
+                    <rect x="17" y="22" width="6" height="6" rx="0.8" fill="#00A4EF" opacity="0.9" />
+                    <rect x="25" y="22" width="6" height="6" rx="0.8" fill="#FFB900" opacity="0.9" />
+                    <!-- Stand -->
+                    <rect x="19" y="34" width="10" height="5" rx="1" fill="#a0b0d0" stroke="#6080b8" stroke-width="1" />
+                    <rect x="14" y="39" width="20" height="3" rx="1.5" fill="#a0b0d0" stroke="#6080b8"
+                        stroke-width="1" />
+                    <!-- Shine -->
+                    <path d="M7 9h34v4Q24 15 7 11V9Z" fill="rgba(255,255,255,0.12)" rx="1" />
+                    <defs>
+                        <linearGradient id="screenGrad" x1="7" y1="9" x2="41" y2="31" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#2a3a80" />
+                            <stop offset="100%" stop-color="#0a1840" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="icon-label">My Computer</span>
+            </div>
+
+            <!-- MY PORTFOLIO (double-click to navigate) -->
+            <div class="icon" id="icon-portfolio" data-action="navigate" tabindex="0" role="button"
+                aria-label="My Portfolio – double-click to open">
+                <svg class="icon-img" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- folder back -->
+                    <path
+                        d="M4 14C4 12.3 5.3 11 7 11H20L24 15H41C42.7 15 44 16.3 44 18V38C44 39.7 42.7 41 41 41H7C5.3 41 4 39.7 4 38V14Z"
+                        fill="#F5C842" />
+                    <path
+                        d="M4 14C4 12.3 5.3 11 7 11H20L24 15H41C42.7 15 44 16.3 44 18V38C44 39.7 42.7 41 41 41H7C5.3 41 4 39.7 4 38V14Z"
+                        fill="url(#folderGradMain)" />
+                    <!-- folder front panel -->
+                    <path d="M4 20H44V38C44 39.7 42.7 41 41 41H7C5.3 41 4 39.7 4 38V20Z" fill="#FFDA44" />
+                    <path d="M4 20H44V38C44 39.7 42.7 41 41 41H7C5.3 41 4 39.7 4 38V20Z" fill="url(#folderFrontMain)" />
+                    <!-- tab -->
+                    <path d="M7 11H20L23 14H7V11Z" fill="#E8B020" />
+                    <!-- shine -->
+                    <path d="M8 21H40V26C40 26 30 27 24 24C18 21 8 23 8 23V21Z" fill="rgba(255,255,255,0.22)" rx="2" />
+                    <!-- star badge -->
+                    <circle cx="36" cy="34" r="7" fill="#1a6edd" />
+                    <polygon
+                        points="36,29 37.5,32.5 41,32.8 38.5,35.2 39.3,38.8 36,37 32.7,38.8 33.5,35.2 31,32.8 34.5,32.5"
+                        fill="#FFD700" stroke="none" />
+                    <defs>
+                        <linearGradient id="folderGradMain" x1="4" y1="11" x2="44" y2="41"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="rgba(255,255,255,0.1)" />
+                            <stop offset="100%" stop-color="rgba(0,0,0,0.08)" />
+                        </linearGradient>
+                        <linearGradient id="folderFrontMain" x1="4" y1="20" x2="4" y2="41"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="rgba(255,255,255,0.15)" />
+                            <stop offset="100%" stop-color="rgba(0,0,0,0.1)" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="icon-label">My Portfolio</span>
+            </div>
+
+            <!-- PROJECTS -->
+            <div class="icon" id="icon-projects" tabindex="0" role="button" aria-label="Projects folder">
+                <svg class="icon-img" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4 14C4 12.3 5.3 11 7 11H20L24 15H41C42.7 15 44 16.3 44 18V38C44 39.7 42.7 41 41 41H7C5.3 41 4 39.7 4 38V14Z"
+                        fill="#F5C842" />
+                    <path d="M4 20H44V38C44 39.7 42.7 41 41 41H7C5.3 41 4 39.7 4 38V20Z" fill="#FFDA44" />
+                    <path d="M7 11H20L23 14H7V11Z" fill="#E8B020" />
+                    <path d="M8 21H40V26C40 26 30 27 24 24C18 21 8 23 8 23V21Z" fill="rgba(255,255,255,0.22)" />
+                    <!-- gear icon inside folder -->
+                    <g transform="translate(13,23)">
+                        <circle cx="11" cy="9" r="3.5" fill="none" stroke="#5a6070" stroke-width="1.5" />
+                        <path
+                            d="M11 4.5V3M11 15V13.5M15.5 9H17M5 9H3.5M14.7 5.3L15.8 4.2M6.2 13.8L7.3 12.7M15.8 13.8L14.7 12.7M7.3 5.3L6.2 4.2"
+                            stroke="#5a6070" stroke-width="1.5" stroke-linecap="round" />
+                    </g>
+                    <defs>
+                        <linearGradient id="fg2" x1="4" y1="11" x2="44" y2="41" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="rgba(255,255,255,0.1)" />
+                            <stop offset="100%" stop-color="rgba(0,0,0,0.08)" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="icon-label">Projects</span>
+            </div>
+
+            <!-- ABOUT ME -->
+            <div class="icon" id="icon-about" tabindex="0" role="button" aria-label="About Me folder">
+                <svg class="icon-img" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4 14C4 12.3 5.3 11 7 11H20L24 15H41C42.7 15 44 16.3 44 18V38C44 39.7 42.7 41 41 41H7C5.3 41 4 39.7 4 38V14Z"
+                        fill="#F5C842" />
+                    <path d="M4 20H44V38C44 39.7 42.7 41 41 41H7C5.3 41 4 39.7 4 38V20Z" fill="#FFDA44" />
+                    <path d="M7 11H20L23 14H7V11Z" fill="#E8B020" />
+                    <path d="M8 21H40V26C40 26 30 27 24 24C18 21 8 23 8 23V21Z" fill="rgba(255,255,255,0.22)" />
+                    <!-- person icon inside folder -->
+                    <circle cx="24" cy="27" r="3.5" fill="#5a6070" />
+                    <path d="M16 39c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#5a6070" stroke-width="1.5"
+                        stroke-linecap="round" fill="none" />
+                </svg>
+                <span class="icon-label">About Me</span>
+            </div>
+
+            <!-- RECYCLE BIN -->
+            <div class="icon" id="icon-recycle" tabindex="0" role="button" aria-label="Recycle Bin">
+                <svg class="icon-img" viewBox="0 0 48 48" fill="none">
+                    <!-- bin body -->
+                    <rect x="10" y="18" width="28" height="24" rx="3" fill="url(#binBodyGrad)" stroke="#6080b8"
+                        stroke-width="1" />
+                    <!-- bin lid -->
+                    <rect x="8" y="14" width="32" height="6" rx="2" fill="url(#binLidGrad)" stroke="#6080b8"
+                        stroke-width="1" />
+                    <!-- handle -->
+                    <rect x="20" y="10" width="8" height="6" rx="2" fill="url(#binLidGrad)" stroke="#6080b8"
+                        stroke-width="1" />
+                    <!-- lines -->
+                    <line x1="18" y1="22" x2="16" y2="38" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <line x1="24" y1="22" x2="24" y2="38" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <line x1="30" y1="22" x2="32" y2="38" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <defs>
+                        <linearGradient id="binBodyGrad" x1="10" y1="18" x2="38" y2="42" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#afc8f8" />
+                            <stop offset="100%" stop-color="#7098e0" />
+                        </linearGradient>
+                        <linearGradient id="binLidGrad" x1="8" y1="14" x2="40" y2="20" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#d0dcff" />
+                            <stop offset="100%" stop-color="#90b0e8" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="icon-label">Recycle Bin</span>
+            </div>
+
+        </div><!-- /icon-grid -->
+
+        <div id="hint">Double-click "My Portfolio" to enter →</div>
+    </div><!-- /desktop -->
+
+    <!-- ─── EXPLORER WINDOW ──────────────────────────────────────── -->
+    <div id="explorer-window">
+        <div id="exp-titlebar">
+            <!-- Monitor icon -->
+            <svg class="exp-title-icon" viewBox="0 0 16 16" fill="none">
+                <rect x="1" y="1" width="14" height="10" rx="1.5" fill="#1a3a80" stroke="#6080b8" stroke-width="0.8" />
+                <rect x="2" y="2" width="12" height="8" rx="1" fill="#0a1840" />
+                <rect x="5" y="11" width="6" height="2" rx="0.5" fill="#8090b8" />
+                <rect x="3" y="13" width="10" height="1.5" rx="0.75" fill="#8090b8" />
+            </svg>
+            <span class="exp-title-text">My Computer</span>
+            <button class="exp-win-btn" id="exp-btn-min" title="Minimize">
+                <svg width="10" height="10">
+                    <rect x="1" y="7" width="8" height="2" fill="#fff" />
+                </svg>
+            </button>
+            <button class="exp-win-btn" id="exp-btn-max" title="Maximize/Restore">
+                <svg width="10" height="10">
+                    <rect x="1" y="1" width="8" height="8" rx="1" stroke="#fff" stroke-width="1.5" fill="none" />
+                </svg>
+            </button>
+            <button class="exp-win-btn" id="exp-btn-close" title="Close">
+                <svg width="10" height="10">
+                    <line x1="2" y1="2" x2="8" y2="8" stroke="#fff" stroke-width="1.8" stroke-linecap="round" />
+                    <line x1="8" y1="2" x2="2" y2="8" stroke="#fff" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+        <iframe id="explorer-iframe" src="explorer.html" title="Windows Explorer"></iframe>
+        <div id="exp-resize">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="pointer-events:none">
+                <line x1="16" y1="6" x2="6" y2="16" stroke="#aaa" stroke-width="1.2" />
+                <line x1="16" y1="10" x2="10" y2="16" stroke="#aaa" stroke-width="1.2" />
+                <line x1="16" y1="14" x2="14" y2="16" stroke="#aaa" stroke-width="1.2" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- ─── START MENU ─────────────────────────────────────────── -->
+    <div id="start-menu" role="dialog" aria-label="Start Menu">
+
+        <!-- Header -->
+        <div class="sm-header">
+            <div class="sm-avatar">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="12" r="6" fill="rgba(255,255,255,0.9)" />
+                    <path d="M4 30c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="rgba(255,255,255,0.9)" />
+                </svg>
+            </div>
+            <div class="sm-username">Portfolio User</div>
+        </div>
+
+        <!-- Body -->
+        <div class="sm-body">
+
+            <!-- Left column – pinned / recent apps -->
+            <div class="sm-left">
+
+                <div class="sm-item">
+                    <svg class="sm-item-icon" viewBox="0 0 28 28" fill="none">
+                        <circle cx="14" cy="14" r="11" fill="#e8f0fe" stroke="#1a6ec8" stroke-width="1.5" />
+                        <ellipse cx="14" cy="14" rx="5" ry="11" stroke="#1a6ec8" stroke-width="1.2" fill="none" />
+                        <line x1="3" y1="14" x2="25" y2="14" stroke="#1a6ec8" stroke-width="1.2" />
+                    </svg>
+                    <div class="sm-item-text">
+                        <div class="sm-item-title">Internet Explorer</div>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <svg class="sm-item-icon" viewBox="0 0 28 28" fill="none">
+                        <rect x="3" y="5" width="22" height="18" rx="2" fill="#1e88e5" stroke="#1565c0"
+                            stroke-width="1" />
+                        <rect x="3" y="5" width="22" height="5" rx="2" fill="#1565c0" />
+                        <rect x="6" y="13" width="6" height="2" rx="1" fill="rgba(255,255,255,0.8)" />
+                        <rect x="6" y="17" width="10" height="2" rx="1" fill="rgba(255,255,255,0.6)" />
+                    </svg>
+                    <div class="sm-item-text">
+                        <div class="sm-item-title">My Documents</div>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <svg class="sm-item-icon" viewBox="0 0 28 28" fill="none">
+                        <rect x="4" y="8" width="20" height="16" rx="2" fill="#ffd54f" stroke="#f9a825"
+                            stroke-width="1" />
+                        <path d="M4 11h20" stroke="#f9a825" stroke-width="1" />
+                        <rect x="7" y="3" width="3" height="7" rx="1" fill="#f9a825" />
+                        <rect x="18" y="3" width="3" height="7" rx="1" fill="#f9a825" />
+                    </svg>
+                    <div class="sm-item-text">
+                        <div class="sm-item-title">Windows Calendar</div>
+                    </div>
+                </div>
+
+                <div class="sm-divider"></div>
+
+                <div class="sm-item">
+                    <svg class="sm-item-icon" viewBox="0 0 28 28" fill="none">
+                        <rect x="3" y="3" width="10" height="10" rx="1.5" fill="#F25022" />
+                        <rect x="15" y="3" width="10" height="10" rx="1.5" fill="#7FBA00" />
+                        <rect x="3" y="15" width="10" height="10" rx="1.5" fill="#00A4EF" />
+                        <rect x="15" y="15" width="10" height="10" rx="1.5" fill="#FFB900" />
+                    </svg>
+                    <div class="sm-item-text">
+                        <div class="sm-item-title">All Programs</div>
+                    </div>
+                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" style="margin-left:auto">
+                        <path d="M2 2l4 4-4 4" stroke="#666" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <!-- Right column -->
+            <div class="sm-right">
+                <div class="sm-right-label">My Places</div>
+
+                <div class="sm-item">
+                    <svg class="sm-item-icon" viewBox="0 0 28 28" fill="none">
+                        <rect x="4" y="8" width="20" height="16" rx="2" fill="#f5c842" stroke="#e8a000"
+                            stroke-width="1" />
+                        <path d="M4 11H24" stroke="#e8a000" stroke-width="1" />
+                        <path d="M4 11V9C4 8.4 4.4 8 5 8h6l3 3H4Z" fill="#e8a000" />
+                    </svg>
+                    <div class="sm-item-text">
+                        <div class="sm-item-title">My Documents</div>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <svg class="sm-item-icon" viewBox="0 0 28 28" fill="none">
+                        <rect x="3" y="6" width="22" height="16" rx="2" fill="#90caf9" stroke="#1565c0"
+                            stroke-width="1" />
+                        <circle cx="14" cy="14" r="5" fill="none" stroke="#1565c0" stroke-width="1.2" />
+                        <circle cx="14" cy="14" r="2" fill="#1565c0" />
+                    </svg>
+                    <div class="sm-item-text">
+                        <div class="sm-item-title">My Network</div>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <svg class="sm-item-icon" viewBox="0 0 28 28" fill="none">
+                        <rect x="3" y="8" width="22" height="14" rx="2" fill="#b0bec5" stroke="#607d8b"
+                            stroke-width="1" />
+                        <rect x="8" y="4" width="12" height="6" rx="1" fill="#90a4ae" stroke="#607d8b"
+                            stroke-width="1" />
+                        <rect x="11" y="18" width="6" height="3" rx="0.5" fill="#607d8b" />
+                    </svg>
+                    <div class="sm-item-text">
+                        <div class="sm-item-title">My Computer</div>
+                    </div>
+                </div>
+
+                <div class="sm-divider"></div>
+
+                <div class="sm-item">
+                    <svg class="sm-item-icon" viewBox="0 0 28 28" fill="none">
+                        <circle cx="14" cy="14" r="9" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5" />
+                        <line x1="14" y1="7" x2="14" y2="14" stroke="#f57f17" stroke-width="2" stroke-linecap="round" />
+                        <line x1="14" y1="14" x2="18" y2="17" stroke="#f57f17" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    <div class="sm-item-text">
+                        <div class="sm-item-title">Control Panel</div>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <svg class="sm-item-icon" viewBox="0 0 28 28" fill="none">
+                        <circle cx="14" cy="14" r="9" fill="#e8f5e9" stroke="#388e3c" stroke-width="1.5" />
+                        <path d="M10 14.5l3 3 5-5" stroke="#388e3c" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <div class="sm-item-text">
+                        <div class="sm-item-title">Help and Support</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="sm-footer">
+            <button class="sm-footer-btn" id="sm-logoff">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M5 2H2C1.4 2 1 2.4 1 3v8c0 .6.4 1 1 1h3" stroke="#fff" stroke-width="1.2"
+                        stroke-linecap="round" />
+                    <path d="M9 4l3 3-3 3M13 7H5" stroke="#fff" stroke-width="1.2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                Log Off
+            </button>
+            <button class="sm-footer-btn" id="sm-shutdown">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 1v6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M4 3.2A5 5 0 1 0 10 3.2" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                        fill="none" />
+                </svg>
+                Shut Down
+            </button>
+        </div>
+
+    </div>
+
+    <!-- ─── TASKBAR ────────────────────────────────────────────── -->
+    <div id="taskbar">
+
+        <!-- Start button -->
+        <button id="start-btn" aria-label="Start">
+            <svg class="start-logo" viewBox="0 0 22 22" fill="none">
+                <rect x="1" y="1" width="9" height="9" rx="1" fill="#F25022" />
+                <rect x="12" y="1" width="9" height="9" rx="1" fill="#7FBA00" />
+                <rect x="1" y="12" width="9" height="9" rx="1" fill="#00A4EF" />
+                <rect x="12" y="12" width="9" height="9" rx="1" fill="#FFB900" />
+            </svg>
+            start
+        </button>
+
+        <!-- Quick Launch -->
+        <div id="quick-launch">
+            <!-- IE icon -->
+            <div class="ql-icon" title="Internet Explorer">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="8" stroke="#1a6ec8" stroke-width="1.5" fill="none" />
+                    <ellipse cx="10" cy="10" rx="4" ry="8" stroke="#1a6ec8" stroke-width="1.2" fill="none" />
+                    <line x1="2" y1="10" x2="18" y2="10" stroke="#1a6ec8" stroke-width="1.2" />
+                    <line x1="10" y1="2" x2="10" y2="18" stroke="#1a6ec8" stroke-width="1.2" />
+                </svg>
+            </div>
+            <!-- Media Player icon -->
+            <div class="ql-icon" title="Windows Media Player">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="8" fill="url(#mpGrad)" stroke="#1a6ec8" stroke-width="0.5" />
+                    <polygon points="8,7 14,10 8,13" fill="#fff" />
+                    <defs>
+                        <radialGradient id="mpGrad" cx="40%" cy="35%">
+                            <stop offset="0%" stop-color="#60b8ff" />
+                            <stop offset="100%" stop-color="#0050b8" />
+                        </radialGradient>
+                    </defs>
+                </svg>
+            </div>
+            <!-- Show desktop icon -->
+            <div class="ql-icon" title="Show Desktop">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <rect x="2" y="4" width="16" height="11" rx="1.5" fill="none" stroke="#c0d0e8" stroke-width="1.5" />
+                    <rect x="7" y="15" width="6" height="2" fill="#c0d0e8" />
+                    <line x1="5" y1="17" x2="15" y2="17" stroke="#c0d0e8" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Active window area -->
+        <div id="active-area">
+            <button class="taskbar-btn" id="tb-explorer-btn" style="display:none" title="My Computer">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <rect x="1" y="1" width="14" height="10" rx="1.5" fill="#1a3a80" stroke="#6080b8"
+                        stroke-width="0.8" />
+                    <rect x="2" y="2" width="12" height="8" rx="1" fill="#2a5abf" />
+                    <rect x="5" y="11" width="6" height="2" rx="0.5" fill="#8090b8" />
+                    <rect x="3" y="13" width="10" height="1.5" rx="0.75" fill="#8090b8" />
+                </svg>
+                My Computer
+            </button>
+        </div>
+
+        <!-- System Tray -->
+        <div id="systray">
+            <!-- Volume -->
+            <svg class="tray-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" title="Volume">
+                <polygon points="2,5 6,5 10,2 10,14 6,11 2,11" fill="#d0dcff" />
+                <path d="M11.5 5.5C12.5 6.3 13 7.1 13 8S12.5 9.7 11.5 10.5" stroke="#d0dcff" stroke-width="1.2"
+                    stroke-linecap="round" fill="none" />
+            </svg>
+            <!-- Network -->
+            <svg class="tray-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" title="Network">
+                <rect x="1" y="10" width="4" height="5" rx="0.5" fill="#d0dcff" />
+                <rect x="6" y="7" width="4" height="8" rx="0.5" fill="#d0dcff" />
+                <rect x="11" y="4" width="4" height="11" rx="0.5" fill="#d0dcff" />
+            </svg>
+            <!-- Clock -->
+            <div id="clock"></div>
+        </div>
+
+    </div><!-- /taskbar -->
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>
